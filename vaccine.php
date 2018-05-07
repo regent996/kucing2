@@ -190,7 +190,7 @@ Website: http://www.allphptricks.com/
     </div>
     <!-- /.sidebar -->
   </aside>
-    
+  
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
 
@@ -213,7 +213,7 @@ Website: http://www.allphptricks.com/
                     
                     
                     // Attempt select query executionan 
-                    $sql = "SELECT typeofcat.id,typeofcat.image,typeofcat.name,typeofcat.age,vaccine.vaccine,vaccine.nextvaccine, vaccine.typeofcat_id FROM typeofcat INNER JOIN vaccine ON typeofcat.id = vaccine.typeofcat_id AND vaccine.status='2' ";
+                    $sql = "SELECT typeofcat.id,typeofcat.image,typeofcat.name,typeofcat.age,vaccine.vaccine,vaccine.nextvaccine, vaccine.typeofcat_id FROM typeofcat INNER JOIN vaccine ON typeofcat.cat_id = vaccine.typeofcat_id AND vaccine.status='2' ";
                     $date = date('Y-m-d');
                     if($result = mysqli_query($con, $sql)){
                         if(mysqli_num_rows($result) > 0){
@@ -263,6 +263,7 @@ Website: http://www.allphptricks.com/
                     mysqli_close($con);
                     
 
+   
                     ?>
                     
                

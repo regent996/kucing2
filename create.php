@@ -122,18 +122,22 @@ $age=$interval->y. " year ".$interval->m." month";
         $vaccine = $input_vaccine;
     }
 
+//validate cat_id
 
+
+    $cat_id=uniqid();
     
     // Check input errors before inserting in database
     if(empty($name_err) && empty($cat_category_err) && empty($image_err) && empty($status_err) && empty($gender_err) && empty($sire_err) && empty($dam_err) && empty($type_err) && empty($color_err) && empty($date_err) && empty($price_err) && empty($description_err) && empty($vaccine_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO typeofcat (name,age,cat_category,image,status, gender, sire, dam ,type , color, date, price, description) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO typeofcat (cat_id,name,age,cat_category,image,status, gender, sire, dam ,type , color, date, price, description) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssssssssss", $param_name, $param_age,$param_cat_category, $param_image,$param_status,$param_gender,$param_sire,$param_dam,$param_type,$param_color, $param_date, $param_price,$param_description);
+            mysqli_stmt_bind_param($stmt, "ssssssssssssss",$param_cat_id, $param_name, $param_age,$param_cat_category, $param_image,$param_status,$param_gender,$param_sire,$param_dam,$param_type,$param_color, $param_date, $param_price,$param_description);
             
             // Set parameters
+            $param_cat_id= $cat_id;
             $param_image = $image;
             $param_name = $name;
             $param_age =$age;
@@ -147,6 +151,7 @@ $age=$interval->y. " year ".$interval->m." month";
             $param_date = $date;
             $param_price = $price;
             $param_description = $description;
+
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -183,9 +188,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $status='2';
      
     // Check input errors before inserting in database
-    $typeofcat_id=$_POST["id"];
+    $typeofcat_id=$cat_id;
     if($age1<6){
-        //kontol2
+       
         // Prepare an insert statement
 
         $sql1 = "INSERT INTO vaccine (vaccine,nextvaccine,typeofcat_id,status) VALUES (?,?,?,?)";
@@ -219,17 +224,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         // Prepare an insert statement
         
-        $sql1 = "INSERT INTO vaccine (vaccine,nextvaccine,status) VALUES (?,?,?)";
+        $sql1 = "INSERT INTO vaccine (vaccine,nextvaccine,typeofcat_id,status) VALUES (?,?,?,?)";
         $nextvaccine=  date('Y-m-d',strtotime("$vaccine +1 Year"));
-         
+            
         if($stmt = mysqli_prepare($con, $sql1)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_vaccine,$param_nextvaccine,$param_status);
+            mysqli_stmt_bind_param($stmt, "ssss", $param_vaccine,$param_nextvaccine,$param_typeofcat_id,$param_status);
             
             // Set parameters
             $param_vaccine = $vaccine;
             $param_nextvaccine = $nextvaccine;
             $param_status = $status;
+            $param_typeofcat_id = $typeofcat_id;
             
             
             
@@ -278,8 +284,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <p>Please fill this cat form and submit .</p>
                     
                      
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"  enctype="multipart/form-data">
-                        
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"  enctype="multipart/form-data">   
                         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                             <label>Name of Cat</label>
                             <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
@@ -380,6 +385,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <br>
                         <br>
                         <br>
+                        <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="dashboard.php" class="btn btn-default">Cancel</a>
                         <br>
