@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="plugins/morris/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker-bs3.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      
+        
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Dashboard
+                
+     
+          
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-pie-chart"></i>
+              <p>
+                Chart    
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-tree"></i>
+              <p>
+                UI Elements
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/UI/general.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>General</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/icons.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Icons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/buttons.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Buttons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/UI/sliders.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Sliders</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-edit"></i>
+              <p>
+                Forms
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/forms/general.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>General Elements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/forms/advanced.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Advanced Elements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/forms/editors.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Editors</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-table"></i>
+              <p>
+                Tables
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/tables/simple.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Simple Tables</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/tables/data.html" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Data Tables</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <?php include("auth.php"); //include auth.php file on all secure pages
+
+
+/*
+Author: Javed Ur Rehman
+Website: http://www.allphptricks.com/
+*/
+ ?>
+ 
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
+    </script>
+
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="mycss/css/main2.css" />
+        <link rel="stylesheet" href="css/style.css" />
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+      <style type="text/css">
+      
+    
+        
+
+        .wrapper{
+            width: 100%;
+            
+            margin: 0 auto;
+        }
+        .page-header h2{
+            margin-top: 0;
+        }
+        table tr td:borderless a{
+            margin-right: 15px;
+        }
+        #test {
+
+        background-color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
+        </script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script>
+         $(document).ready(function(){
+         $("#myInput").on("keyup", function() {
+         var value = $(this).val().toLowerCase();
+         $("#myTable tr").filter(function() {
+         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+         });
+        });
+        });
+        </script>
+
+    </head>
+    <body>
+
+        <!-- Header -->
+            <header id="header">
+                <nav class="left">
+                    <a href="#menu"><span>Menu</span></a>
+                </nav>
+                <a href="index.php" class="logo">Abu Hurairah Cat House</a>
+                <nav class="right">
+                    <p>Welcome <?php echo $_SESSION['username']; ?>!</p>
+                </nav>
+            </header>
+
+        <!-- Menu -->
+            <nav id="menu">
+                <ul class="links">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="Available.php">Available</a>
+                      <a href="dead.php">Dead</a>
+                      <a href="rehomed.php">Rehomed</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                    
+                </ul>
+                
+            </nav>
+
+        <!-- Banner -->
+
+            <section style="" id="banner">
+                
+                 
+        <div class="container-fluid" style="    ">
+                    <div class="page-header clearfix">
+                        
+                        <a href="adding.php" class="btn btn-success pull-left" style="margin-right: 5px;">Add New Cat Type</a> 
+                        <a href="colouradd.php" class="btn btn-success pull-left" style="margin-right: 5px;">Add New Cat Colour</a>
+                        <a href="create.php" class="btn btn-success pull-left">Add New Cat</a>
+                        <h2 style="color: rgb(23,231,246);" class="pull-right">Cat Details</h2>
+                    </div>
+                    <input id="myInput" style="border-radius:5px; margin-bottom: 10px; background-color: white;" type="text" placeholder="Search.." >
+                    <div id="test">
+                    <?php
+                    // Include config file
+                    require_once 'testtt.php';
+                    
+                    // Attempt select query execution
+                    $sql = "SELECT * FROM typeofcat";
+                    $date = date('Y-m-d');
+                    if($result = mysqli_query($con, $sql)){
+                        if(mysqli_num_rows($result) > 0){
+                            echo "<table class='table table-hover'>";
+                                echo "<thead-dark>";
+                                    echo "<tr>";
+                                        echo "<th>ID</th>";
+                                        echo "<th>Cat Picture</th>";
+                                        echo "<th>Name of Cat</th>";
+                                        echo "<th>Sire</th>";
+                                        echo "<th>Dam</th>";
+                                        echo "<th>Status</th>";
+                                        echo "<th>Gender</th>";
+                                        echo "<th>Type of Cat</th>";
+                                        echo "<th>Colour</th>";
+                                        echo "<th>Date of birth</th>";
+                                        echo "<th>Price</th>";
+                                        echo "<th>Description</th>";
+                                        echo "<th>Action</th>";
+                                    echo "</tr>";
+                                echo "</thead>";
+                                echo "<tbody id='myTable'>";
+                                while($row = mysqli_fetch_array($result)){
+                                    echo "<tr>";
+                                        echo "<td>" . $row['id'] . "</td>";
+                                        echo "<td>".'<img src="data:image/jpeg;base64,'.base64_encode($row["image"] ).'" height="60" width="80" class="img-circle" />'."</td>";  
+                                        echo "<td>" . $row['name'] . "</td>";
+                                        echo "<td>" . $row['sire'] . "</td>";
+                                        echo "<td>" . $row['dam'] . "</td>";
+                                        echo "<td>" . $row['status'] . "</td>";
+                                        echo "<td>" . $row['gender'] . "</td>";
+                                        echo "<td>" . $row['type'] . "</td>";
+                                        echo "<td>" . $row['color'] . "</td>";
+                                        echo "<td>" . $row['date'] . "</td>";
+                                        echo "<td>" . $row['price'] . "</td>";
+                                        echo "<td>" . $row['description'] . "</td>";
+                                        echo "<td>";
+                                            echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                            echo "<a href='update.php?id=". $row['id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                              echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                        echo "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</tbody>";                            
+                            echo "</table>";
+                            // Free result set
+                            mysqli_free_result($result);
+                        } else{
+                            echo "<p class='lead'><em>No records were found.</em></p>";
+                        }
+                    } else{
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
+                    }
+ 
+                    // Close connection
+                    mysqli_close($con);
+                    ?>
+               
+            </div>        
+       
+    </div>  
+        </div>            
+                </div>
+            </section>
+
+        <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <h2>Get In Touch</h2>
+                    <ul class="actions">
+                        <li><span class="icon fa-phone"></span> <a href="#">(000) 000-0000</a></li>
+                        <li><span class="icon fa-envelope"></span> <a href="#">information@untitled.tld</a></li>
+                        <li><span class="icon fa-map-marker"></span> 123 Somewhere Road, Nashville, TN 00000</li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy; Untitled. Design <a href="https://templated.co">TEMPLATED</a>. Images <a href="https://unsplash.com">Unsplash</a>.
+                </div>
+            </footer>
+
+        <!-- Scripts -->
+            <script src="mycss/js/jquery.min.js"></script>
+            <script src="mycss/js/jquery.scrolly.min.js"></script>
+            <script src="mycss/js/skel.min.js"></script>
+            <script src="mycss/js/util.js"></script>
+            <script src="mycss/js/main.js"></script>
+
+    </body>
+</html>
+
+
+        </div>
+  <!-- /.content-wrapper -->
+  
+
+</body>
+</html>
