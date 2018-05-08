@@ -188,9 +188,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $status='2';
      
     // Check input errors before inserting in database
+
     $typeofcat_id=$cat_id;
     if($age1<6){
-       
+        //kontol2
         // Prepare an insert statement
 
         $sql1 = "INSERT INTO vaccine (vaccine,nextvaccine,typeofcat_id,status) VALUES (?,?,?,?)";
