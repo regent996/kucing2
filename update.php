@@ -106,7 +106,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     } else{
         $description = $input_description;
     }
-
     
     // Check input errors before inserting in database
     if(empty($name_err) && empty($image_err) && empty($status_err) && empty($cat_category_err) && empty($gender_err) && empty($sire_err) && empty($dam_err) && empty($type_err) && empty($color_err) && empty($date_err) && empty($price_err) && empty($description_err)){

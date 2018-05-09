@@ -213,14 +213,14 @@ Website: http://www.allphptricks.com/
                     
                     
                     // Attempt select query executionan 
-                    $sql = "SELECT typeofcat.id,typeofcat.image,typeofcat.name,typeofcat.age,vaccine.vaccine,vaccine.nextvaccine, vaccine.typeofcat_id FROM typeofcat INNER JOIN vaccine ON typeofcat.cat_id = vaccine.typeofcat_id AND vaccine.status='2' ";
+                    $sql = "SELECT typeofcat.image,typeofcat.name,typeofcat.age,typeofcat.date,vaccine.vaccine,vaccine.nextvaccine, vaccine.typeofcat_id,vaccine.id,vaccine.status FROM typeofcat INNER JOIN vaccine ON typeofcat.cat_id = vaccine.typeofcat_id AND vaccine.status='2' ";
                     $date = date('Y-m-d');
                     if($result = mysqli_query($con, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-hover'>";
                                 echo "<thead-dark>";
                                     echo "<tr>";
-                                        echo "<th>ID</th>";
+                                        
                                         echo "<th>Cat Picture</th>";
                                         echo "<th>Name of Cat</th>";
                                         echo "<th>Age</th>";
@@ -232,14 +232,13 @@ Website: http://www.allphptricks.com/
                                 echo "<tbody id='myTable'>";
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>".'<img src="data:image/jpeg;base64,'.base64_encode($row["image"] ).'" height="60" width="80" class="img-circle" />'."</td>";  
                                         echo "<td>" . $row['name'] . "</td>";
-                                        echo "<td>" . $row['age'] . "</td>";
+                                        echo "<td>" . $row['age'] . "</td>"; 
                                         echo "<td>" . $row['vaccine'] . "</td>";
                                         echo "<td>"  . $row['nextvaccine'] .  "</td>"; 
                                         echo "<td>";
-                                            echo "<a href='vacupdate.php?id=". $row['id'] ."' title='Update Latest Vaccine' data-toggle='tooltip'><span class='glyphicon glyphicon-plus'></span></a>";
+                                            echo "<a href='vacupdate.php?id=". $row['id'] ."&date=". $row['date']."&age=". $row['age']."&typeofcat_id=". $row['typeofcat_id']."' title='Update Latest Vaccine' data-toggle='tooltip'><span class='glyphicon glyphicon-plus'></span></a>";
                                             
                                         echo "</td>";
                                     echo "</tr>";

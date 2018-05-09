@@ -20,7 +20,7 @@
                         <h1>Invalid Request</h1>
                     </div>
                     <div class="alert alert-danger fade in">
-                        <p>Sorry, you've made an invalid request. Please <a href="table.php" class="alert-link">go back</a> and try again.</p>
+                        <p>Sorry, you've made an invalid request. Please <a onclick="goBack()" class="alert-link">go back</a> and try again.</p>
                     </div>
                 </div>
             </div>        
@@ -28,3 +28,8 @@
     </div>
 </body>
 </html>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
