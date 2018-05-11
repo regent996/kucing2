@@ -176,7 +176,15 @@ Website: http://www.allphptricks.com/
           </li>
             </ul>
           </li>
-    
+              <li class="nav-item has-treeview">
+            <a href="Vaccine.php" class="nav-link">
+              <i class="nav-icon fa fa-eyedropper"></i>
+              <p>
+                <p>Vaccine</p>
+
+              </p>
+            </a>
+          </li>    
               <li class="nav-item has-treeview">
             <a href="logout.php" class="nav-link">
               <i class="nav-icon fa fa-share"></i>
