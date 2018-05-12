@@ -47,7 +47,7 @@ Website: http://www.allphptricks.com/
 
       <style type="text/css">
       
-    
+        
         
 
         .wrapper{
@@ -61,10 +61,7 @@ Website: http://www.allphptricks.com/
         table tr td:borderless a{
             margin-right: 15px;
         }
-        #test {
-
-        background-color: white;
-        }
+        
     </style>
     
 
@@ -210,13 +207,15 @@ Website: http://www.allphptricks.com/
         <div class="container-fluid" style="    ">
                     <div class="page-header clearfix">
                         
-                        <a href="adding.php" class="btn btn-success pull-left" style="margin-right: 5px;">Add New Cat Type</a> 
-                        <a href="colouradd.php" class="btn btn-success pull-left" style="margin-right: 5px;">Add New Cat Colour</a>
-                        <a href="create.php" class="btn btn-success pull-left">Add New Cat</a>
+                        <a href="adding.php" class="btn btn-success">Add Cat Type</a> 
+                        <a href="colouradd.php" class="btn btn-success">Add Cat Colour</a>
+                        <a href="create.php" class="btn btn-success">Add Cat</a>
+                        <br>
+                        <br>
                         <h2 style="color: rgb(23,231,246);" class="pull-right">Cat Details</h2>
                     </div>
                     <input id="myInput" style="border-radius:5px; margin-bottom: 10px; background-color: white;" type="text" placeholder="Search.." >
-                    <div id="test">
+                    <div class="table-responsive">
                     <?php
                     
                     

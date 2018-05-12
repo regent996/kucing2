@@ -359,7 +359,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                         <div class="form-group <?php echo (!empty($date_err)) ? 'has-error' : ''; ?>">
                             <label>Date of birth</label>
-                            <input type="date" name="date" class="form-control"><?php echo $date; ?>  </input>
+                            <input type="date" name="date" class="form-control" value="<?php echo $date; ?>">
                             <span class="help-block"><?php echo $date_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($vaccine_err)) ? 'has-error' : ''; ?>">
@@ -380,7 +380,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                         <div class="form-group">
                         
-                        <input type="file" name="image" id="image" />
+                        <input type="file" name="image" id="image"  required="image" />
+
 
                         </div>
                         <br>

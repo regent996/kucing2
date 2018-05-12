@@ -226,7 +226,7 @@ Website: http://www.allphptricks.com/
                         <h2 style="color: rgb(23,231,246);" class="pull-left">Rehomed Cats</h2>
                     </div>
                     <input id="myInput" style="border-radius:5px; margin-bottom: 10px; background-color: white;" type="text" placeholder="Search.." >
-                    <div id="test">
+                    <div class="table-responsive">
                     <?php
                     // Include config file
                     require_once 'testtt.php';

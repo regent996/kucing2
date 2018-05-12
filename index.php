@@ -58,10 +58,7 @@
         table tr td:borderless a{
             margin-right: 15px;
         }
-        #test {
-
-        background-color: white;
-        }
+        
     </style>
     <script type="text/javascript">
         $(document).ready(function(){

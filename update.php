@@ -106,7 +106,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     } else{
         $description = $input_description;
     }
-    
+   
+
     // Check input errors before inserting in database
     if(empty($name_err) && empty($image_err) && empty($status_err) && empty($cat_category_err) && empty($gender_err) && empty($sire_err) && empty($dam_err) && empty($type_err) && empty($color_err) && empty($date_err) && empty($price_err) && empty($description_err)){
         // Prepare an update statement
@@ -319,7 +320,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             </div>
                         <div class="form-group <?php echo (!empty($date_err)) ? 'has-error' : ''; ?>">
                             <label>date</label>
-                            <input type="date" name="date" class="form-control">  </input>
+                            <input type="date" name="date" class="form-control" value="<?php echo $date; ?>">
                             <span class="help-block"><?php echo $date_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
@@ -334,7 +335,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <div class="form-group">                        
-                        <input type="file" name="image" id="image" />
+                        <input type="file" name="image" id="image" required="image" />
                         </div>
                         <br>
                         <br>

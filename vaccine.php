@@ -212,15 +212,12 @@ Website: http://www.allphptricks.com/
                  
         <div class="container-fluid" style="    ">
                     <div class="page-header clearfix">
-                        
-                          <a href="addvac.php" class="btn btn-success pull-left" style="margin-right: 5px;">Add New Cat Type</a> 
-                        <h2 style="color: rgb(23,231,246);" class="pull-right">Cat Details</h2>
+                        <h2 style="color: rgb(23,231,246);" class="pull-right">Vaccine Details</h2>
                     </div>
                     <input id="myInput" style="border-radius:5px; margin-bottom: 10px; background-color: white;" type="text" placeholder="Search.." >
                     <div id="test">
                     <?php
-                    
-                    
+                           
                     // Attempt select query executionan 
                     $sql = "SELECT typeofcat.image,typeofcat.name,typeofcat.age,typeofcat.date,vaccine.vaccine,vaccine.nextvaccine, vaccine.typeofcat_id,vaccine.id,vaccine.status FROM typeofcat INNER JOIN vaccine ON typeofcat.cat_id = vaccine.typeofcat_id AND vaccine.status='2' ";
                     $date = date('Y-m-d');
@@ -270,7 +267,6 @@ Website: http://www.allphptricks.com/
                     // Close connection
                     mysqli_close($con);
                     
-
    
                     ?>
                     
